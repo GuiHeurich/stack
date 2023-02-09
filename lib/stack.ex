@@ -1,18 +1,17 @@
 defmodule Stack do
-  @moduledoc """
-  Documentation for `Stack`.
-  """
 
-  @doc """
-  Hello world.
+  @server Stack.Server
 
-  ## Examples
-
-      iex> Stack.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def start_link(current_stack) do
+    GenServer.start_link(@server, current_stack, name: @server)
   end
+
+  def pop do
+    GenServer.call @server, :pop
+  end
+
+  def push(value) do
+    GenServer.cast @server, {:push, value}
+  end
+
 end
