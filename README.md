@@ -1,6 +1,7 @@
 # Stack
 
-**TODO: Add description**
+A server that implements a stack. Uses the GenServer behaviour from Erlang.
+Based on the exercises from Dave Thomas' Porgramming Elixir. 
 
 ## Installation
 
